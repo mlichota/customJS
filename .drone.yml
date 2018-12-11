@@ -1,6 +1,6 @@
 pipeline:
   deploy:
-    image: drone_custom_js_deployer:latest
+    image: lichy/drone_custom_js_deployer:latest
     when:
       branch: master
       event: push
