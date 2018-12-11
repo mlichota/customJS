@@ -1,9 +1,7 @@
 pipeline:
   deploy:
-    image: drone_custom_js_deployer 
-    repo: customJS
+    image: drone_custom_js_deployer:latest
     when:
       branch: master
       event: push
 
- 
