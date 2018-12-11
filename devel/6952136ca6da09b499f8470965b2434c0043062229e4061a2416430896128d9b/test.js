@@ -343,17 +343,17 @@ inputCommand.properties.cssClass = 'hideEmailForm';
 
 });
 
-// IWVA_setResponse.add.commandHook(formToRenderLabel, function () {
-//     if (iwsaas.notExisitsThat === undefined) {
-//         iwsaas.notExisitsThat = true;
-//         if (this.command.properties.dockerId === "dc-output") {
-//             IWVA_checkingLanguage();
-//         } else {
-//             IWVA_connectToLc();
-//         }
-//     }
-//     this.remove();
-// });
+IWVA_setResponse.add.commandHook(formToRenderLabel, function () {
+    if (iwsaas.notExisitsThat === undefined) {
+        iwsaas.notExisitsThat = true;
+        if (this.command.properties.dockerId === "dc-output") {
+            IWVA_checkingLanguage();
+        } else {
+            IWVA_connectToLc();
+        }
+    }
+    this.remove();
+});
 
 
-// IWVA_setResponse.add.replace('<label>sysClientEmail </label>', '');
+IWVA_setResponse.add.replace('<label>sysClientEmail </label>', '');
