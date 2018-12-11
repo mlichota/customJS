@@ -1,46 +1,46 @@
-window.IWVA_moduleInitArr = window.IWVA_moduleInitArr || [];
-function checkAndRunLotFunction() {
-if (typeof IWChat !== "undefined" && typeof IWChat.run !== "undefined") {
-IWChat.run()
-}
-}
-window.IWVA_moduleInitArr.push(checkAndRunLotFunction);
+// window.IWVA_moduleInitArr = window.IWVA_moduleInitArr || [];
+// function checkAndRunLotFunction() {
+// if (typeof IWChat !== "undefined" && typeof IWChat.run !== "undefined") {
+// IWChat.run()
+// }
+// }
+// window.IWVA_moduleInitArr.push(checkAndRunLotFunction);
 
-iw.ServerCallback.prototype.callback = function callback(p152, p153) {
-    if (!p152) return;
-    if (!this.m166.hasFocus()) {
-        this._f4("locked callback for token: ", p152, 'focus id: ', this.m175);
-        return;
-    }
-    if (this.m178[p152]) {
-        clearTimeout(this.m178[p152]);
-        delete this.m178[p152];
-    }
-    switch (parseInt(p153)) {
-        case 1:
-            if (this.m177[p152] && this.m177[p152].parentNode == this.m37 && this.m180) {
-                this.m180.call(null, p152);
-                this.m37.removeChild(this.m177[p152]);
-                delete this.m177[p152];
-            }
-            break
-        case 0:
-            if (this.m177[p152] && this.m177[p152].parentNode == this.m37) {
-                this.m37.removeChild(this.m177[p152]);
-                delete this.m177[p152];
-                this.pull(p152);
-            }
-            break;
-        case -1:
-          this._f4("invalid token: ", p152);
-          var isLc = objICHR_InteliwiseSaaSModule.core.factory.getObserverById('iw-module-wrapper').getElement().classList.contains('iw-live-chat');
-          if(typeof window.IWVA_showWelcome === 'function' && !isLc) {
-          window.IWVA_showWelcome();
-          }
-           break;
+// iw.ServerCallback.prototype.callback = function callback(p152, p153) {
+//     if (!p152) return;
+//     if (!this.m166.hasFocus()) {
+//         this._f4("locked callback for token: ", p152, 'focus id: ', this.m175);
+//         return;
+//     }
+//     if (this.m178[p152]) {
+//         clearTimeout(this.m178[p152]);
+//         delete this.m178[p152];
+//     }
+//     switch (parseInt(p153)) {
+//         case 1:
+//             if (this.m177[p152] && this.m177[p152].parentNode == this.m37 && this.m180) {
+//                 this.m180.call(null, p152);
+//                 this.m37.removeChild(this.m177[p152]);
+//                 delete this.m177[p152];
+//             }
+//             break
+//         case 0:
+//             if (this.m177[p152] && this.m177[p152].parentNode == this.m37) {
+//                 this.m37.removeChild(this.m177[p152]);
+//                 delete this.m177[p152];
+//                 this.pull(p152);
+//             }
+//             break;
+//         case -1:
+//           this._f4("invalid token: ", p152);
+//           var isLc = objICHR_InteliwiseSaaSModule.core.factory.getObserverById('iw-module-wrapper').getElement().classList.contains('iw-live-chat');
+//           if(typeof window.IWVA_showWelcome === 'function' && !isLc) {
+//           window.IWVA_showWelcome();
+//           }
+//            break;
 
-    }
-}
+//     }
+// }
 
 
 var IWVA_setResponse = (function () {
