@@ -1,0 +1,9 @@
+pipeline:
+  deploy:
+    image: drone_custom_js_deployer 
+    repo: customJS
+    when:
+      branch: master
+      event: push
+
+ 
